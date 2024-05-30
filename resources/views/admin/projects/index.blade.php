@@ -10,7 +10,7 @@
         <th scope="col">ID</th>
         <th scope="col">TITLE</th>
         <th scope="col">CREATED AT</th>
-        <th scope="col">SLUG    </th>
+        <th scope="col">SLUG</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +20,7 @@
             <td>{{$project->title}}</td>
             <td>{{$project->created_at}}</td>
             <td>{{$project->slug}}</td>
+            <td><a href="{{route('adminprojects.show', ['project'=> $project->id])}}">Dettagli</a></td>
         </tr>
     @endforeach
     </tbody>
