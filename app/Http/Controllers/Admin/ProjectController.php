@@ -41,7 +41,7 @@ class ProjectController extends Controller
 
         $request->validate(
             [
-                'title' =>'required|min:5|max:250|unique',
+                'title' =>'required|min:5|max:250',
                 'client_name' => 'required|min:5|max:250',
                 'summary' => 'required|min:15'
             ]
@@ -85,6 +85,14 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $request->validate(
+            [
+                'title' =>'required|min:5|max:250',
+                'client_name' => 'required|min:5|max:250',
+                'summary' => 'required|min:15',
+            ]
+        );
+        
         $formdata = $request->all();
         $formdata['slug'] = Str::slug($formdata['title'], '-');
         $project->update($formdata);

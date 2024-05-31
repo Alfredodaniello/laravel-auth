@@ -17,15 +17,15 @@
         @csrf
         <div class="mb-3">
           <label for="title" class="form-label">Titolo</label>
-          <input type="text" class="form-control" id="title" name="title">
+          <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
         </div>
         <div class="mb-3">
             <label for="client_name" class="form-label">Client name</label>
-            <input type="text" class="form-control" id="client_name" name="client_name">
+            <input type="text" class="form-control" id="client_name" name="client_name" value="{{old('client_name')}}" >
         </div>
         <div class="mb-3">
             <label for="summary" class="form-label">Summary</label>
-            <textarea class="form-control" id="summary"  name="summary" rows="10"></textarea>
+            <textarea class="form-control" id="summary"  name="summary" rows="10">{{old('summary')}}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
