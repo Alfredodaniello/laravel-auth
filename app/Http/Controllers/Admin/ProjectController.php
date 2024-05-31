@@ -38,6 +38,14 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'title' =>'required|min:5|max:250|unique',
+                'client_name' => 'required|min:5|max:250',
+                'summary' => 'required|min:15'
+            ]
+        );
         $formdata = $request->all();
         $newProject = new Project();
         $newProject->fill($formdata);
