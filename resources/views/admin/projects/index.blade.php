@@ -11,6 +11,7 @@
         <th scope="col">TITLE</th>
         <th scope="col">CREATED AT</th>
         <th scope="col">SLUG</th>
+        <th scope="col">ACTIONS</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +21,10 @@
             <td>{{$project->title}}</td>
             <td>{{$project->created_at}}</td>
             <td>{{$project->slug}}</td>
-            <td><a href="{{route('adminprojects.show', ['project'=> $project->id])}}">Dettagli</a></td>
+            <td>
+                <a href="{{route('adminprojects.show', ['project'=> $project->id])}}">Dettagli</a>
+                <a href="{{route('adminprojects.edit', ['project'=> $project->id])}}">Modifica</a>
+            </td>
         </tr>
     @endforeach
     </tbody>
