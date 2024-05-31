@@ -58,6 +58,11 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> I Miei Progetti
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'adminprojects.create' ? 'bg-secondary' : '' }}" href="{{route('adminprojects.create')}}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Crea Un Progetto
+                                </a>
+                            </li>
                         </ul>
 
 
