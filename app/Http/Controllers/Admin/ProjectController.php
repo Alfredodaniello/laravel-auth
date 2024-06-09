@@ -99,6 +99,13 @@ class ProjectController extends Controller
         );
         
         $formdata = $request->all();
+        if($request->hasFile('cover_image')){
+            if($project->cover_image){
+                Storage::delete($project->cover_image);
+            }
+            $img_path = Storage::disk('public')->put('project_image', $formdata['cover_image']);
+            $formdata['cover_image'] = $img_path;
+        }
         $formdata['slug'] = Str::slug($formdata['title'], '-');
         $project->update($formdata);
         return redirect()->route('adminprojects.index');    

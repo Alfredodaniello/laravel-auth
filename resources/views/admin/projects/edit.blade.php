@@ -24,6 +24,10 @@
         <input type="text" class="form-control" id="client_name" name="client_name" value="{{$project->client_name}}">
     </div>
     <div class="mb-3">
+        <label for="cover_image" class="form-label">Image</label>
+        <input class="form-control" type="file" id="formFile" name="cover_image">
+    </div>
+    <div class="mb-3">
         <label for="summary" class="form-label">Summary</label>
         <textarea class="form-control" id="summary"  name="summary" rows="10"></textarea>
     </div>
