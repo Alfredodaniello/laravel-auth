@@ -12,7 +12,7 @@
     </ul>
 </div>
 @endif
-<form action="{{route('adminprojects.update', ['project' => $project->id])}}" method="POST">
+<form action="{{route('adminprojects.update', ['project' => $project->id])}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="mb-3">
