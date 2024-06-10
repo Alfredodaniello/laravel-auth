@@ -44,7 +44,8 @@ class ProjectController extends Controller
             [
                 'title' =>'required|min:5|max:250',
                 'client_name' => 'required|min:5|max:250',
-                'summary' => 'required|min:15'
+                'summary' => 'required|min:15',
+                'cover_image' => 'image'
             ]
         );
         $formdata = $request->all();
@@ -95,6 +96,7 @@ class ProjectController extends Controller
                 'title' =>'required|min:5|max:250',
                 'client_name' => 'required|min:5|max:250',
                 'summary' => 'required|min:15',
+                'cover_image' => 'image'
             ]
         );
         
